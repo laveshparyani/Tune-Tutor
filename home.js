@@ -1,11 +1,11 @@
-fetch('/navbar.html')
+fetch('navbar.html')
 .then(response => response.text())
 .then(data => {
     document.getElementById('navbar-placeholder').innerHTML = data;
 })
 .catch(error => console.error('Error loading navbar:', error));
 
-fetch('/footer.html')
+fetch('footer.html')
 .then(response => response.text())
 .then(data => {
     document.getElementById('footer-placeholder').innerHTML = data;

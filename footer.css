@@ -74,17 +74,17 @@
 }
 
 .social-icon.instagram {
-    background-image: url('/instagram-icon.png');
+    background-image: url('instagram-icon.png');
     background-size: cover;
 }
 
 .social-icon.linkedin {
-    background-image: url('/linkedin-icon.png');
+    background-image: url('linkedin-icon.png');
     background-size: cover;
 }
 
 .social-icon.github {
-    background-image: url('/github-icon.png');
+    background-image: url('github-icon.png');
     background-size: cover;
 }
 
