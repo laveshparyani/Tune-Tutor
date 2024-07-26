@@ -1,0 +1,273 @@
+/* Footer Section */
+.footer {
+    background-color: #e74a1a;
+    color: #281F1A;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-left {
+    width: 30%;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+.whatsapp-button {
+    display: flex;
+    width: 200px;
+    align-items: center;
+    background-color: #32CD30;
+    color: #274472;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin-top: 17px;
+    text-decoration: none; /* Ensure the link itself is styled correctly */
+}
+
+.whatsapp-button img {
+    width: 21px;
+    margin-right: 10px;
+}
+
+.whatsapp-button span {
+    color: #E74A1A;
+    font-weight: bold;
+    font-size: 16px; /* Adjust size as needed */
+}
+
+.social-follow h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 90px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: #722f10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon.instagram {
+    background-image: url('/assets/instagram-icon.png');
+    background-size: cover;
+}
+
+.social-icon.linkedin {
+    background-image: url('/assets/linkedin-icon.png');
+    background-size: cover;
+}
+
+.social-icon.github {
+    background-image: url('/assets/github-icon.png');
+    background-size: cover;
+}
+
+.trusted-image {
+    margin-top: -20px;
+}
+
+.trusted-image img {
+    width: 45%;
+}
+
+.footer-right {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-column {
+    width: 22%;
+}
+
+.footer-column h3 {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+    color: #281F1A;
+    font-size: 16px;
+    font-weight: 490;
+    text-decoration: none;
+}
+
+.footer-address {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: -20px;
+}
+
+.footer-address a {
+    color: #281F1A;
+    font-weight: 500;
+    font-size: 17px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.footer-address img {
+    height: 50px;
+    width: 50px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 14px;
+    width: 100%;
+}
+
+@media (max-width: 769px) {
+    .whatsapp-button {
+        display: flex;
+        width: 140px;
+        height: 30px;
+        align-items: center;
+        background-color: #32CD30;
+        color: #274472;
+        border-radius: 15px;
+        padding: 10px 10px 10px 10px    ;
+        margin-top: 17px;
+        text-decoration: none; /* Ensure the link itself is styled correctly */
+    }
+    
+    .whatsapp-button img {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+    }
+    
+    .whatsapp-button span {
+        color: #E74A1A;
+        font-weight: bold;
+        font-size: 10px; /* Adjust size as needed */
+    }
+
+    .trusted-image {
+        margin-top: 02px;
+    }
+    
+    .trusted-image img {
+        width: 45%;
+    }
+}
+
+@media (max-width: 427px) {
+
+    .contact-info h2 {
+        font-size: 10px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .contact-info p {
+        font-size: 7px;
+    }
+
+    .whatsapp-button {
+        display: flex;
+        width: 140px;
+        height: 30px;
+        align-items: center;
+        background-color: #32CD30;
+        color: #274472;
+        border-radius: 15px;
+        padding: 10px 10px 10px 10px    ;
+        margin-top: 17px;
+        text-decoration: none; /* Ensure the link itself is styled correctly */
+    }
+    
+    .whatsapp-button img {
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+    }
+    
+    .whatsapp-button span {
+        color: #E74A1A;
+        font-weight: bold;
+        font-size: 10px; /* Adjust size as needed */
+    }
+
+    .social-follow h2 {
+        font-size: 10px;
+        font-weight: bold;
+        margin-top: 90px;
+    }
+
+    .trusted-image {
+        margin-top: 02px;
+    }
+    
+    .trusted-image img {
+        width: 45%;
+    }
+
+    .footer-columns {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-column h3 {
+        font-size: 10px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-left: 25px;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 0px;
+    }
+
+    .footer-column ul li a {
+        color: #281F1A;
+        font-size: 7px;
+        text-decoration: none;
+        margin-left: 25px;
+    }
+}

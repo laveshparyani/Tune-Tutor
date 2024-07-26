@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+        .blog-card:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease;
+        }
+    </style>
+    <script>
+        // Load navbar
+        fetch('/navbar/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar').innerHTML = data;
+        });
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <!-- Layout -->
+    <div class="h-screen max-w-5xl px-2 py-3 mx-auto mt-10 tracking-wide md:px-4 md:mt-12">
+        <!-- Title -->
+        <div class="flex justify-center text-3xl font-bold mb-6">Frequently Asked Questions</div>
+        <!-- End Title -->
+
+        <!-- Accordion -->
+        <div class="grid gap-3 py-8 text-lg leading-6 text-gray-800 md:gap-8 md:grid-cols-2">
+            <!-- Left Side -->
+            <div class="space-y-3">
+                <!-- FAQ 1 -->
+                <div x-data="accordion(1)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                    <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <span class="tracking-wide">What is Tune Tutor?</span>
+                            <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                                <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                        <div class="px-6 pb-4 text-gray-600">
+                            Tune Tutor offers live, one-on-one online music classes with professional tutors in various languages and musical styles.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 2 -->
+                <div x-data="accordion(2)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                    <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <span class="tracking-wide">How do I book a class?</span>
+                            <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                                <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                        <div class="px-6 pb-4 text-gray-600">
+                            You can book a class directly through our website by selecting your preferred tutor and scheduling a session.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 3 -->
+                <div x-data="accordion(3)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                    <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <span class="tracking-wide">What instruments do you offer lessons for?</span>
+                            <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                                <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                        <div class="px-6 pb-4 text-gray-600">
+                            We offer lessons for a wide range of instruments including guitar, piano, violin, drums, and more.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 4 -->
+                <div x-data="accordion(4)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                    <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <span class="tracking-wide">Are the classes tailored to individual needs?</span>
+                            <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                                <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                        <div class="px-6 pb-4 text-gray-600">
+                            Yes, our classes are customized based on your learning preferences and goals.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 5 -->
+                <div x-data="accordion(5)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                    <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <span class="tracking-wide">How do I contact my tutor?</span>
+                            <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                                <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                        <div class="px-6 pb-4 text-gray-600">
+                            You can contact your tutor through the messaging system on our platform.
+                        </div>
+                    </div>
+                </div>
+                <!-- FAQ 6 -->
+                <div x-data="accordion(6)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                    <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                        <div class="flex items-center justify-between">
+                            <span class="tracking-wide">What languages are the classes available in?</span>
+                            <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                                <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                        <div class="px-6 pb-4 text-gray-600">
+                        Classes are available in English and major Indian languages.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Side -->
+            <div class="space-y-3">
+            <!-- FAQ 7 -->
+            <div x-data="accordion(7)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                    <div class="flex items-center justify-between">
+                        <span class="tracking-wide">Can I try a demo class before booking?</span>
+                        <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                            <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                    <div class="px-6 pb-4 text-gray-600">
+                        Yes, we offer free demo classes to experience our teaching methods.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ 8 -->
+            <div x-data="accordion(8)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                    <div class="flex items-center justify-between">
+                        <span class="tracking-wide">What if I miss a class?</span>
+                        <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                            <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                    <div class="px-6 pb-4 text-gray-600">
+                        You can reschedule missed classes through our platform.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ 9 -->
+            <div x-data="accordion(9)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                    <div class="flex items-center justify-between">
+                        <span class="tracking-wide">How are tutors selected?</span>
+                        <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                            <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                    <div class="px-6 pb-4 text-gray-600">
+                        Tutors are selected through a rigorous interview process and must have professional music qualifications.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ 10 -->
+            <div x-data="accordion(10)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                    <div class="flex items-center justify-between">
+                        <span class="tracking-wide">Can I choose my tutor?</span>
+                        <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                            <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                    <div class="px-6 pb-4 text-gray-600">
+                        Yes, you can choose your tutor based on their profile and expertise.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ 11 -->
+            <div x-data="accordion(11)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                    <div class="flex items-center justify-between">
+                        <span class="tracking-wide">Are there any prerequisites for taking a class?</span>
+                        <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                            <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                    <div class="px-6 pb-4 text-gray-600">
+                        There are no specific prerequisites; our classes cater to all skill levels.
+                    </div>
+                </div>
+            </div>
+            <!-- FAQ 12 -->
+            <div x-data="accordion(12)" class="relative transition-all duration-700 border rounded-xl hover:shadow-2xl">
+                <div @click="handleClick()" class="w-full p-4 text-left cursor-pointer">
+                    <div class="flex items-center justify-between">
+                        <span class="tracking-wide">What equipment do I need for online classes?</span>
+                        <span :class="handleRotate()" class="transition-transform duration-500 transform fill-current">
+                            <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div x-ref="tab" :style="handleToggle()" class="relative overflow-hidden transition-all duration-700 max-h-0">
+                    <div class="px-6 pb-4 text-gray-600">
+                        You need a reliable internet connection, a computer or tablet, and the instrument you wish to learn.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Accordion -->
+</div>
+<!-- End Layout -->
+
+<script>
+    // Faq
+    document.addEventListener("alpine:init", () => {
+        Alpine.store("accordion", {
+            tab: 0
+        });
+
+        Alpine.data("accordion", (idx) => ({
+            init() {
+                this.idx = idx;
+            },
+            idx: -1,
+            handleClick() {
+                this.$store.accordion.tab =
+                    this.$store.accordion.tab === this.idx ? 0 : this.idx;
+            },
+            handleRotate() {
+                return this.$store.accordion.tab === this.idx ? "-rotate-180" : "";
+            },
+            handleToggle() {
+                return this.$store.accordion.tab === this.idx
+                    ? `max-height: ${this.$refs.tab.scrollHeight}px`
+                    : "";
+            }
+        }));
+    });
+    // End faq
+</script>
+</body>
+</html>
