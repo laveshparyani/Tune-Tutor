@@ -142,8 +142,7 @@ nav {
     padding-left: 20px;
 }
 
-.grades-dropdown-subitem:hover .grades-nested-dropdown,
-.grades-dropdown-subitem:focus .grades-nested-dropdown {
+.grades-subitem-wrap:hover .grades-nested-dropdown {
     display: block;
 }
 
