@@ -1,4 +1,30 @@
 {
+  "name": "tune-tutor",
+  "version": "1.0.0",
+  "description": "A responsive front-end demo for an online music-learning platform, built with HTML, CSS, JavaScript, and Tailwind CSS.",
+  "author": "Lavesh Paryani",
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://laveshparyani.github.io/Tune-Tutor/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laveshparyani/Tune-Tutor.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "tailwindcss",
+    "postcss",
+    "responsive-design",
+    "frontend",
+    "landing-page",
+    "music"
+  ],
+  "scripts": {
+    "build": "tailwindcss -i ./src/styles/tailwind.css -o ./dist/tailwind.css --minify",
+    "watch": "tailwindcss -i ./src/styles/tailwind.css -o ./dist/tailwind.css --watch"
+  },
   "dependencies": {
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.40",
