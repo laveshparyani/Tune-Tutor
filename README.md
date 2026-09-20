@@ -33,11 +33,11 @@ out through a rich footer.
 > full product but are not included in this demo. There is no backend - forms and
 > login are illustrative only.
 
-## 📸 Screenshots
+## 📸 Preview
 
-| Home | Explore Classes | Book a Demo |
-| :---: | :---: | :---: |
-| ![Home](assets/screenshots/1.png) | ![Explore](assets/screenshots/2.png) | ![Demo](assets/screenshots/3.png) |
+See it live: **[laveshparyani.github.io/Tune-Tutor](https://laveshparyani.github.io/Tune-Tutor/)**
+
+[![Tune Tutor preview](assets/images/online-music-classes.png)](https://laveshparyani.github.io/Tune-Tutor/)
 
 ## ✨ Features
 
@@ -107,8 +107,7 @@ Tune-Tutor/
 ├── assets/
 │   ├── css/                   # home.css, navbar.css, footer.css
 │   ├── js/                    # home.js, navbar.js
-│   ├── images/                # Logos, icons, instruments, people
-│   └── screenshots/           # README screenshots
+│   └── images/                # Logos, icons, instruments, people
 ├── src/styles/tailwind.css    # Tailwind entry (@tailwind directives)
 ├── dist/                      # Built CSS output
 ├── tailwind.config.js         # Tailwind theme & content config
