@@ -3,7 +3,7 @@ module.exports = {
   darkMode: 'class',
   content: [
     './*.html', // All HTML pages live in the project root
-    './*.js', // Root-level scripts (home.js, navbar.js)
+    './assets/**/*.js', // Scripts (home.js, navbar.js)
     './src/**/*.{html,js,css}', // Anything under src
   ],
   theme: {

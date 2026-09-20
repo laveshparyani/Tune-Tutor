@@ -16,13 +16,22 @@
         }
     </style>
     <script>
-        // Load navbar
+        // Load navbar, then initialize its interactivity
         fetch('navbar.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('navbar').innerHTML = data;
-        });
+                if (typeof initNavbar === 'function') initNavbar();
+            });
+
+        // Load footer
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
     </script>
+    <script src="assets/js/navbar.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -291,5 +300,6 @@
     });
     // End faq
 </script>
+    <div id="footer-placeholder"></div>
 </body>
 </html>

@@ -1,33 +1,37 @@
+// Load the shared navbar, then initialize its interactivity once it exists.
 fetch('navbar.html')
-.then(response => response.text())
-.then(data => {
-    document.getElementById('navbar-placeholder').innerHTML = data;
-})
-.catch(error => console.error('Error loading navbar:', error));
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+        if (typeof initNavbar === 'function') initNavbar();
+    })
+    .catch(error => console.error('Error loading navbar:', error));
 
+// Load the shared footer.
 fetch('footer.html')
-.then(response => response.text())
-.then(data => {
-    document.getElementById('footer-placeholder').innerHTML = data;
-})
-.catch(error => console.error('Error loading navbar:', error));
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(error => console.error('Error loading footer:', error));
 
 document.addEventListener('DOMContentLoaded', function() {
     const slideTrack = document.querySelector('.slide-track');
     const slides = document.querySelectorAll('.slide');
-    const slideWidth = slides[0].offsetWidth;
-    const cloneSlides = Array.from(slides).map(slide => slide.cloneNode(true));
-    cloneSlides.forEach(clone => slideTrack.appendChild(clone));
-    
-    // Function to restart the animation
-    slideTrack.addEventListener('animationiteration', () => {
-        slideTrack.style.animation = 'none';
-        slideTrack.offsetHeight; /* trigger reflow */
-        slideTrack.style.animation = null; 
-    });
+    if (slideTrack && slides.length > 0) {
+        const cloneSlides = Array.from(slides).map(slide => slide.cloneNode(true));
+        cloneSlides.forEach(clone => slideTrack.appendChild(clone));
+
+        // Function to restart the animation
+        slideTrack.addEventListener('animationiteration', () => {
+            slideTrack.style.animation = 'none';
+            slideTrack.offsetHeight; /* trigger reflow */
+            slideTrack.style.animation = null;
+        });
+    }
 
     const faqQuestions = document.querySelectorAll('.faq-question');
-    
+
     faqQuestions.forEach(question => {
         question.addEventListener('click', function() {
             const answer = this.nextElementSibling;
@@ -53,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const increment = Math.ceil(target / 100); // Increment value
         const duration = 2500; // Duration of animation
-        const stepTime = Math.abs(Math.floor(duration / target)); // Time per step
+        const stepTime = Math.max(1, Math.abs(Math.floor(duration / target))); // Time per step
 
         const animate = () => {
             if (count < target) {

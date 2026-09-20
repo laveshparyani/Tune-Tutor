@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="Logo.png" alt="Tune Tutor logo" width="140" />
+<img src="assets/images/Logo.png" alt="Tune Tutor logo" width="140" />
 
 # 🎵 Tune Tutor
 
@@ -37,7 +37,7 @@ out through a rich footer.
 
 | Home | Explore Classes | Book a Demo |
 | :---: | :---: | :---: |
-| ![Home](1.png) | ![Explore](2.png) | ![Demo](3.png) |
+| ![Home](assets/screenshots/1.png) | ![Explore](assets/screenshots/2.png) | ![Demo](assets/screenshots/3.png) |
 
 ## ✨ Features
 
@@ -97,19 +97,24 @@ Then open the printed local URL (e.g. `http://localhost:3000`) in your browser.
 
 ```
 Tune-Tutor/
-├── index.html            # Home page
-├── blog.html             # Blog page
-├── bookdemo.html         # Book a free demo
-├── faq.html              # FAQ page
-├── login.html            # Login page (illustrative)
-├── navbar.html / .css / .js   # Shared navbar (injected via fetch)
-├── footer.html / .css         # Shared footer (injected via fetch)
-├── home.html assets...        # Home styles/scripts (home.css, home.js)
+├── index.html                 # Home page
+├── blog.html                  # Blog page
+├── bookdemo.html              # Book a free demo
+├── faq.html                   # FAQ page
+├── login.html                 # Login page (illustrative)
+├── navbar.html                # Shared navbar partial (injected via fetch)
+├── footer.html                # Shared footer partial (injected via fetch)
+├── assets/
+│   ├── css/                   # home.css, navbar.css, footer.css
+│   ├── js/                    # home.js, navbar.js
+│   ├── images/                # Logos, icons, instruments, people
+│   └── screenshots/           # README screenshots
 ├── src/styles/tailwind.css    # Tailwind entry (@tailwind directives)
-├── dist/                      # Built CSS/JS output
+├── dist/                      # Built CSS output
 ├── tailwind.config.js         # Tailwind theme & content config
 ├── postcss.config.js          # PostCSS pipeline
-└── *.png / *.jpg              # Images (logos, icons, instruments, people)
+├── package.json               # Scripts & dev dependencies
+└── .github/                   # CI workflows, issue/PR templates, policies
 ```
 
 ## 📝 License
